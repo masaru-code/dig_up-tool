@@ -1,0 +1,2 @@
+module SigntourokuHelper
+end
