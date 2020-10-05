@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.header-right{
+  float: right;
+  font-size: 20px;
+  margin-right: 50px;
+}
+
 .sintouroku{
   margin-left:    500px;
   .field{
