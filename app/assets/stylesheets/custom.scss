@@ -1,15 +1,42 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/*header*/
+.header{
+  background-color: rgba(34,49,52,0.9);
+  position:fixed;
+  top:0;
+  z-index: 10;
+  withd: auto;
+  width: 100%;
+  
+}
 .header-right{
   float: right;
   font-size: 20px;
   margin-right: 50px;
+  list-style: none;
+  display: flex;
+  padding: 15px 0px 15px 0px;
+  .sing_css{
+    padding-left: 20px;
+  }
 }
 
+/*登録*/
 .sintouroku{
   margin-left:    500px;
   .field{
   padding-bottom: 10px;
   }
 }
+/*説明*/
+.setumei-page{
+  float: left;
+  margin-left: 50px;
+}
+.setumei-page h1{
+　　margin-top: 10px;
+　　margin-left: 100px;
+}
+
