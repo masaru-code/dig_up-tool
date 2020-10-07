@@ -2,8 +2,7 @@
   <div class = "container">
     <h1>Dig up tool</h1>
     <p>
-      まずは説明<a href="https://railstutorial.jp/">
-      （サイト説明ページ)</a>をみてください
+      まずは説明<%= link_to 'サイト説明ページ', dig_top_setumei_path %>を見てください
     </p>
       <%= link_to "ログイン", new_user_registration_path, class: "btn btn-lg btn-primary" %>
     <div class = "touroku-btn">  

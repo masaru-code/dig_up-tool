@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   root 'dig_top#home'  
   get 'pages/index'
 
@@ -7,5 +8,6 @@ Rails.application.routes.draw do
 
   get 'dig_top/help'
 
+  get 'dig_top/setumei'
   #root 'application#hello'
 end
