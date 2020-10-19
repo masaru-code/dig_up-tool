@@ -10,16 +10,21 @@ Rails.application.routes.draw do
   get 'dig_home/minna'
 
   get 'dig_home/proces'
+  
+  get 'dig_home/dig_index' 
 
   devise_for :users
+  resources :users
   
   root 'dig_top#home'  
-  get 'pages/index'
+  get 'users/index'
 
-  get 'pages/show'
+  get 'users/show'
 
   get 'dig_top/help'
 
   get 'dig_top/setumei'
   #root 'application#hello'
+  
 end
+
