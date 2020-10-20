@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',        '5.1.6'
 # それらしい値を自動生成できる
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+gem 'faker',          '1.7.3'
 gem 'gravtastic'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
