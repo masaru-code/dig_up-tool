@@ -1,5 +1,6 @@
 class DigHomeController < ApplicationController
 #before_action :logged_in_user, only: [:jikou, :jikou_end, :chat_room, :minnna, :proces]
+PER = 15
   
   def dighome
   
@@ -21,6 +22,7 @@ class DigHomeController < ApplicationController
   end
   
   def dig_index
-    @users = User.page(params[:page]) 
+    #@users = User.page(params[:page]) 
+    @users = User.page(params[:page]).per(PER)
   end  
 end
