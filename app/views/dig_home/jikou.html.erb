@@ -1,8 +1,10 @@
 <div class = container>
-  <h1>実行したいこと</h1>
-  <p>入力した事がタイトルになります</p>
-  <input type="text" @title="title"></input>
-　<%= link_to "チャットルームへ", dig_home_chat_room_path, class: "btn btn-lg btn-primary" %>
-　<p>ユーザー一人につきタイトルは１０個までにしてます、いっぱいになったら今途中のタイトルを終わらすか、消してください</p>
-　
+    <p>やりたい事を入力　➡　チャットタイトルになります</p>
+    <%= form_for(@user, url: dig_home_chat_room_path, method: :post) do |f| %>
+        <div class="form-group">
+            <%= f.label :@wonttitle, "やりたい事を入力" %>
+            <%= f.text_field :@wonttitle %>
+        </div>
+            <%= f.submit "チャットルームへ" %>
+    <% end %>
 </div>

@@ -26,5 +26,6 @@ Rails.application.routes.draw do
   get 'dig_top/setumei'
   #root 'application#hello'
   
+  
 end
 
