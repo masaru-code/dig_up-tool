@@ -1,6 +1,6 @@
 class DigHomeController < ApplicationController
 #before_action :logged_in_user, only: [:jikou, :jikou_end, :chat_room, :minnna, :proces]
-PER = 15
+PER = 5
   
   def dighome
   
