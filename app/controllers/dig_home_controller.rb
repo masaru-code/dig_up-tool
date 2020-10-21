@@ -13,6 +13,7 @@ PER = 5
   end  
 
   def chat_room
+    @title = title.new(title)
   end
 
   def minna
