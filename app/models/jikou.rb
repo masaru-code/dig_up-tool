@@ -1,0 +1,2 @@
+class Jikou < ApplicationRecord
+end

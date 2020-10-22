@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'dig_home/dighome'
 
-  get 'dig_home/jikou'
+  get 'dig_home/new'
   
   get 'dig_home/jikou_end'
 

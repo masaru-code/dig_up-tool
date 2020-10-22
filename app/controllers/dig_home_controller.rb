@@ -6,7 +6,8 @@ PER = 5
   
   end
 
-  def jikou
+  def new
+    @jikou = Jikou.new
   end
   
   def jikou_end
