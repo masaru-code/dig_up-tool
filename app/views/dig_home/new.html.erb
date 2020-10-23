@@ -1,8 +1,8 @@
 <div class = container>
     <p>やりたい事を入力　➡　チャットタイトルになります</p>
-    <%= form_with model: @jikous do |f| %>
+    <%= form_with model: @jikous, method: :post do |f| %>
       <%= f.label :jikou, 'やりたい事を入力' %>
       <%= f.text_field :jikou %>
-      <%= f.submit "チャットルームへ" %>
+      <%= f.submit "チャットルームへ",dig_home_chat_room_path %>
     <% end %>
 </div>
