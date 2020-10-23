@@ -26,4 +26,8 @@ PER = 5
     #@users = User.page(params[:page]) 
     @users = User.page(params[:page]).per(PER)
   end  
+  
+private
+
+
 end
