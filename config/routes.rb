@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'dig_home/dighome'
 
-  get 'dig_home/jikou'
+  get 'dig_home/new'
   
   get 'dig_home/jikou_end'
 
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users
+  resources :jikous
   
   root 'dig_top#home'  
   get 'users/index'
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
 
   get 'dig_top/setumei'
   #root 'application#hello'
+  
   
 end
 

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '5.1.6'
+# それらしい値を自動生成できる
 gem 'faker',          '1.7.3'
 gem 'gravtastic'
 gem 'will_paginate',           '3.1.6'
