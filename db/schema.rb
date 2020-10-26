@@ -11,20 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20201024112815) do
-  
-  create_table :work_schedules do |t|
-　　　t.references :task
-      t.string :name, null: false　　　 #工程を入力　空はエラー
-      t.integer :position, default: 1   #並び替え？
-      t.text :advise　　　　　　　　　　#アドバイスコメント
-    t.timestamps
-  end
-  
-  create_table :tasks do |t|
-      t.references :user　　　　　　#user idカラムを作成　インデックスを自動で張ってくれる
-      t.string :name, null: false   #文字列を入力　空は許可しない 
-      t.integer :status, default: 0 #整数　初期値を０
-    t.timestamps
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer "user　　　　　　_id"
+    t.string "name", null: false
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user　　　　　　_id"], name: "index_tasks_on_user　　　　　　_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,6 +48,16 @@ ActiveRecord::Schema.define(version: 20201024112815) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  end
+
+  create_table "work_schedules", force: :cascade do |t|
+    t.integer "task_id"
+    t.string "name", null: false
+    t.integer "position", default: 1
+    t.text "advise　　　　　　　　　　"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_work_schedules_on_task_id"
   end
 
 end
