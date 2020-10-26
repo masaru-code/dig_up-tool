@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201021230330) do
-
-  create_table "entries", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema.define(version: 20201024112815) do
+  
+  create_table :work_schedules do |t|
+　　　t.references :task
+      t.string :name, null: false　　　 #工程を入力　空はエラー
+      t.integer :position, default: 1   #並び替え？
+      t.text :advise　　　　　　　　　　#アドバイスコメント
+    t.timestamps
   end
-
-  create_table "jikous", force: :cascade do |t|
-    t.string "jikou"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  
+  create_table :tasks do |t|
+      t.references :user　　　　　　#user idカラムを作成　インデックスを自動で張ってくれる
+      t.string :name, null: false   #文字列を入力　空は許可しない 
+      t.integer :status, default: 0 #整数　初期値を０
+    t.timestamps
   end
 
   create_table "users", force: :cascade do |t|

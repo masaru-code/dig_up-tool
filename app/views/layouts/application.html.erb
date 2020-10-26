@@ -1,30 +1,37 @@
-<!DOCTYPE html>
-<%= render 'layouts/header' %>
+<!--!DOCTYPEはhtmlファイルですよの意味-->
+<!DOCTYPE html>　
+<!--ヘッダーをapplication（全体に影響する）にいれる-->
+<%= render 'layouts/header' %>　　
 <!--スマホ用-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
 
-    <head>
+<head>
     <title>DigUp</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
   <body>
         <header>
             <nav>
                 <% if user_signed_in? %>
-                <strong><%= link_to current_user.name, users_show_path %></strong>
+                <!--strongは強調のhtml-->
+                <strong><%= link_to current_user.name, users_show_path %></strong> 
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
             <% else %>
                 <% end %>
             </nav>
-        </header>    
+        </header> 
+    <!--下２行はdevise時に作成されたflashメッセージ表示    -->
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>    
+    <p class="alert"><%= alert %></p>
+    <div class = container>  
+    <!--yieldは今読んでるページ、chat_room,new,dig_index等が入ってくる-->
     <%= yield %>
+    </div>
   </body>
 </html>
