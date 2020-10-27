@@ -1,2 +1,7 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<p>やりたい事を入力　➡　チャットタイトルになります</p>
+<!--form_withの特徴はidを見てログイン済みならどこへ等idを見て行き先を判断する-->
+    <%= form_with model: @tasks do |form| %>
+      <%= form.label :name, 'やりたい事を入力' %>
+      <%= form.text_field :name %>
+      <%= form.submit "チャットルームへ" %>
+    <% end %>

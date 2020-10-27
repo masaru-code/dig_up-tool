@@ -4,15 +4,15 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = current_user.tasks.build
+    @task = current_user.tasks.build  #current_userはdevise時に使える機能
   end
 
   def create
     @task = current_user.tasks.build(task_params)
       if @task.save
-        redirect_to dig_home_chat_room_path
+        redirect_to dig_home_chat_room_path  #create.html.erbじゃなくダイレクトにchdt_roomへ
       else
-        render :new
+        render :index
       end
   end
   
