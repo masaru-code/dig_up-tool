@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+#   basic認証
   #before_action :basic_authentication
   before_action :configure_permitted_parameters, if: :devise_controller?  
   
@@ -11,7 +12,8 @@ class ApplicationController < ActionController::Base
         def sign_in_required
             redirect_to new_user_session_url unless user_signed_in?
         end 
-        
+    
+    # basic認証    
     #def basic_authentication
         #authenticate_or_request_with_http_basic do |name, password|
         #name == "cckun" && password == "aideaippai2"

@@ -10,19 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201021230330) do
+ActiveRecord::Schema.define(version: 20201024112815) do
 
-  create_table "entries", force: :cascade do |t|
-    t.string "title"
-    t.text "body"
+  create_table "tasks", force: :cascade do |t|
+    t.integer "user　　　　　　_id"
+    t.string "name", null: false
+    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "jikous", force: :cascade do |t|
-    t.string "jikou"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user　　　　　　_id"], name: "index_tasks_on_user　　　　　　_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,6 +48,16 @@ ActiveRecord::Schema.define(version: 20201021230330) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  end
+
+  create_table "work_schedules", force: :cascade do |t|
+    t.integer "task_id"
+    t.string "name", null: false
+    t.integer "position", default: 1
+    t.text "advise　　　　　　　　　　"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_work_schedules_on_task_id"
   end
 
 end
