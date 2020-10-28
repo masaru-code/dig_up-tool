@@ -19,6 +19,9 @@ class TasksController < ApplicationController
   def chat_room
   end
   
+  def show
+  end
+  
 private
 
   def task_params
