@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'tasks/new'
 
   get 'tasks/create'
+  
+  post 'tasks/create',as:"tasks" #モデルを見たときにcreateを
 
   #自分で書いたルート
   # get 'dig_home/dighome'

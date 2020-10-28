@@ -12,8 +12,11 @@ class TasksController < ApplicationController
       if @task.save
         redirect_to dig_home_chat_room_path  #create.html.erbじゃなくダイレクトにchdt_roomへ
       else
-        render :index
+        render :new
       end
+  end
+  
+  def chat_room
   end
   
 private
