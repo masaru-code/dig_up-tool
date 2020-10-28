@@ -18,7 +18,6 @@
         <header>
             <nav>
                 <% if user_signed_in? %>
-                <!--strongは強調のhtml-->
                 <strong><%= link_to current_user.name, users_path %></strong> 
                 <%= link_to 'プロフィール変更', edit_user_registration_path %>
                 <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
@@ -26,11 +25,9 @@
                 <% end %>
             </nav>
         </header> 
-    <!--下２行はdevise時に作成されたflashメッセージ表示    -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class = container>  
-    <!--yieldは今読んでるページ、chat_room,new,dig_index等が入ってくる-->
+    <div class = container>
     <%= yield %>
     </div>
   </body>

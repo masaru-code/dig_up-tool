@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :tasks　#userモデルとtasksモデルをつなぐ　userが親(1つ)なのでhas_many  useridが１に対してやりたい事は複数
+  has_many :tasks
   
   #include Gravtastic
   #gravtastic

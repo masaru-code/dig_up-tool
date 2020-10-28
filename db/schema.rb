@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 20201024112815) do
 
   create_table "tasks", force: :cascade do |t|
-    t.integer "user　　　　　　_id"
+    t.integer "user_id"
     t.string "name", null: false
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user　　　　　　_id"], name: "index_tasks_on_user　　　　　　_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20201024112815) do
     t.integer "task_id"
     t.string "name", null: false
     t.integer "position", default: 1
-    t.text "advise　　　　　　　　　　"
+    t.text "advise"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_work_schedules_on_task_id"
