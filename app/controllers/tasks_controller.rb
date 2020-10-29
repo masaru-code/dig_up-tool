@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.todo.order(updated_at: :desc).page(params[:page])
   end
-
+  
   def new
     @task = current_user.tasks.build
   end
@@ -16,8 +16,7 @@ class TasksController < ApplicationController
       end
   end
   
-  def chat_room
-  end
+
   
 private
 

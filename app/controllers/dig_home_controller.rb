@@ -18,6 +18,9 @@ PER = 5
   def show
   end
   
+  def chat_room
+  end  
+  
 private
 
 
