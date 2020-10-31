@@ -1,10 +1,19 @@
 <div class = "header fixed-top">
   <nav>
     <ul class="header-right">
-      <p>提案者name</p>
+      <p>提案者</p><%= @user.name %>
+      <h1>チャットタイトル</h1><%= @task.name %>
       <li><%= link_to "sing-top", root_path %></li>
       <li><%= link_to "home", dig_home_dighome_path %></li>
       <li><%= link_to "sing_up", new_user_registration_path, class: "sing_css" %></li>
     </ul>
   </nav>
+  <div class=”form-inline”>
+    <%= form_with model: @task, local: true do |form| %>
+      <%= form.label :name, 'コメント入力' %>
+      <%= form.text_field :name %>
+      <%= form.file_field :image %>
+      <%= form.submit "下に送信" %>
+    <% end %>
+  </div>
 </div>

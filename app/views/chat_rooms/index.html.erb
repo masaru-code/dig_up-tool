@@ -9,7 +9,6 @@
 </head>
     <%= render 'chat_header' %>　
     <div class = container>
-      <%= @task.name %>
       <% if @task.image.attached? %>
         <%= image_tag @task.image.variant(resize: "100x100") %>
       <% end %>  
