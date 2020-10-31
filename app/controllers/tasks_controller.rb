@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+before_action :authenticate_user!  
+  
   def index
     @tasks = Task.todo.order(updated_at: :desc).page(params[:page])
   end
@@ -21,6 +23,6 @@ class TasksController < ApplicationController
 private
 
   def task_params
-    params.require(:task).permit(:name)
+    params.require(:task).permit(:name, :images)
   end
 end

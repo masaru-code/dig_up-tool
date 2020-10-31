@@ -19,7 +19,10 @@ PER = 5
   end
   
   def chat_room
-  end  
+    render layout: false
+    # @task = current_user.tasks(name)
+    # @user = current_user.users
+  end
   
 private
 
