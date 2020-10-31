@@ -11,11 +11,11 @@ before_action :authenticate_user!
 
   def create
     @task = current_user.tasks.build(task_params)
-      if @task.save
-        redirect_to dig_home_chat_room_path
-      else
-        render :new
-      end
+    if @task.save
+      redirect_to task_chat_rooms_path(@task)
+    else
+      render :new
+    end
   end
   
 
@@ -23,6 +23,6 @@ before_action :authenticate_user!
 private
 
   def task_params
-    params.require(:task).permit(:name, :images)
+    params.require(:task).permit(:name, :image)
   end
 end
