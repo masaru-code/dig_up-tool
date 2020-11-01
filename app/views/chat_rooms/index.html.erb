@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+<head>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+    <%= render 'chat_header' %>　
+    <div class = container>
+      <% if @task.image.attached? %>
+        <%= image_tag @task.image.variant(resize: "100x100") %>
+      <% end %>  
+    <%= render 'chat_footer' %>  
+    </div>
+
+</html>
+
