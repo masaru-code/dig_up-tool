@@ -20,6 +20,9 @@ before_action :authenticate_user!
   
 
   
+  def show
+  end
+  
 private
 
   def task_params
