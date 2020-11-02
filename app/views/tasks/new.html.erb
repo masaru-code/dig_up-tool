@@ -1,10 +1,5 @@
 <p>やりたい事を入力　➡　チャットタイトルになります</p>
- chat
 <%= form_with model: @task, local: true do |form| %>
-
-<!--form_withの特徴はidを見てログイン済みならどこへ等idを見て行き先を判断する-->
- <%= form_with mode: @task, local: true do |form| %>
- master
       <%= form.label :name, 'やりたい事を入力' %>
       <%= form.text_field :name %>
       <%#= form.file_field :image %>
