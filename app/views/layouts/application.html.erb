@@ -22,10 +22,14 @@
                 <% end %>
             </nav>
         </header> 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class = container>
-    <%= yield %>
-    </div>
+     <%= render "layouts/header" %>
+     <%#= render "layouts/flash" %>
+     <div id="modalArea"></div>
+     <main>
+      <div class="container-fruid h-100 p-2 d-flex flex-column">
+          <%= yield %>
+       </div>
+     </main>
+     <%#= render "layouts/footer" %>
   </body>
 </html>
