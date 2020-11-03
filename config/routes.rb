@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :todos
-  resources :goals
+  resources :goals do
+    resources :todos do
+      member do
+        get "sort"
+      end
+    end
+  end
   get 'chat_rooms/index'
   #講師に直してもらったroot
   # rails routesで詳細確認
