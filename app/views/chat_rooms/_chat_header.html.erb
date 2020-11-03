@@ -9,7 +9,7 @@
     </ul>
   </nav>
   <div class=”form-inline”>
-    <%= form_with model: @task, local: true do |form| %>
+    <%= form_with model: @coment, local: true do |form| %>
       <%= form.label :name, 'コメント入力' %>
       <%= form.text_field :name %>
       <%= form.file_field :image %>

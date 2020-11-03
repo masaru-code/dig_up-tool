@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   
+  resources :chat_rooms
   resources :users
   resources :tasks do
     resources :chat_rooms, only: %i(index)
