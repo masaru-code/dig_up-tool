@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :todos
+  resources :goals
   get 'chat_rooms/index'
   #講師に直してもらったroot
   # rails routesで詳細確認
