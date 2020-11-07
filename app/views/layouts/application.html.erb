@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%= render 'layouts/header' %>　　
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html>
 
@@ -22,10 +21,14 @@
                 <% end %>
             </nav>
         </header> 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class = container>
-    <%= yield %>
-    </div>
+     <%= render "layouts/header" %>
+     <%#= render "layouts/flash" %>
+  <div id="modalArea"></div>     
+  <div class= "container">
+     <main>
+          <%= yield %>
+     </main>
+  </div>
+     <%#= render "layouts/footer" %>
   </body>
 </html>

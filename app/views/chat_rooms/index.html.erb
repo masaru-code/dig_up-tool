@@ -9,9 +9,22 @@
 </head>
     <%= render 'chat_header' %>　
     <div class = container>
-      <% if @task.image.attached? %>
-        <%= image_tag @task.image.variant(resize: "100x100") %>
-      <% end %>  
+      
+      <h2>コメント一覧</h2>
+      <% if @comments.any? %>
+      <ul>
+      <% @comments.each do |comment| %>
+      <li><%= gravatar_for comment.user, size: 50 %><%= comment.user&.name %>: <%= comment.content %>
+      <% if comment.image.attached? %>
+        <%= image_tag comment.image.variant(resize: "100x100") %>
+      <% end %>       
+      </li>
+
+      <% end %>
+      </ul>
+      <% end %>
+      
+  
     <%= render 'chat_footer' %>  
     </div>
 
