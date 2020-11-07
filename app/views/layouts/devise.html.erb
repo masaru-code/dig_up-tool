@@ -8,9 +8,10 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+    <body>
     <%= render "layouts/header" %>
     <%= render "layouts/flash" %>
+    <div class = "masaru-devise">
     <main class="bg-home d-flex align-items-center w-100 h-100">
       <div class="container">
         <div class="row">
@@ -20,6 +21,7 @@
         </div>
       </div>
     </main>
+    </div>
     <%= render "layouts/footer" %>
   </body>
 </html>    

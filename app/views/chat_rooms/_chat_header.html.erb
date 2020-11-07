@@ -1,19 +1,20 @@
-<div class = "header fixed-top">
-  <nav>
-    <ul class="header-right">
-      <h3>提案者:<%= @task.user&.name %></h3>
-      <h2><%= @task.name %></h2>
-      <li><%= link_to "sing-top", root_path %></li>
-      <li><%= link_to "home", dig_home_dighome_path %></li>
-      <li><%= link_to "sing_up", new_user_registration_path, class: "sing_css" %></li>
-    </ul>
-  </nav>
-  <div class=”form-inline”>
-    <%= form_with model: @coment, local: true do |form| %>
-      <%= form.label :name, 'コメント入力' %>
-      <%= form.text_field :name %>
-      <%= form.file_field :image %>
-      <%= form.submit "下に送信" %>
-    <% end %>
+<div class = "container">
+  <div class= "header fixed-top, form-inline">
+        <h4>提案者:<%= @task.user&.name %></h4>
+        <h4><%= @task.name %></h4>
+        <div class= "header-right">
+          <%= link_to "sing-top", root_path %>
+          <%= link_to "home", dig_home_dighome_path %>
+          <%= link_to "sing_up", new_user_registration_path, class: "sing_css" %>
+        </div>
+  </div>
+  
+  <div class= "header fixed-top, form-inline">
+      <%= form_with model: @comment, url: task_chat_rooms_path(@task), local: true do |form| %>
+        <%= form.label :name, 'コメント入力' %>
+        <%= form.text_field :content %>
+        <%= form.file_field :image %>
+        <%= form.submit "下に送信" %>
+      <% end %>  
   </div>
 </div>

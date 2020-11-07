@@ -1,4 +1,5 @@
 class GoalsController < ApplicationController
+  #layout 'home'
   before_action :authenticate_user!
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 

@@ -13,4 +13,5 @@ module ApplicationHelper
        flash_key.to_s
      end
   end
+  
 end
