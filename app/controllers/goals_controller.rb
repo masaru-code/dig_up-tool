@@ -6,11 +6,15 @@ class GoalsController < ApplicationController
   # GET /goals
   def index
    @goals = current_user.goals.all
+   @yuser = current_user.name
+  # @ytask = current_user.tasks.find(params[:task_id])
   end
 
   # GET /goals/new
   def new
-   @goal = current_user.goals.new
+    if (goal.id <= 10)
+      @goal = current_user.goals.new
+    end
   end
 
   # GET /goals/1/edit

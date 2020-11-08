@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   resources :tasks do
     resources :chat_rooms, only: %i(index create)
   end
+  
 end
 
