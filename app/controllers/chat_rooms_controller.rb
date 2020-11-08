@@ -16,6 +16,10 @@ class ChatRoomsController < ApplicationController
     else
       render :index
     end
+    
+    if @task.save
+      redirect_to goals_path(@task)
+    end
   end
   
   private
