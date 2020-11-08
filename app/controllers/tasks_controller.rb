@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-before_action :authenticate_user!  
+before_action :authenticate_user!
+before_action :set_task, only: [:show, :edit, :update, :destroy]
   
   def index
     @tasks = Task.todo.order(updated_at: :desc).page(params[:page])
