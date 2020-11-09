@@ -1,5 +1,5 @@
 class CreateTodos < ActiveRecord::Migration[5.2]
-  def change
+  def create
     create_table :todos do |t|
       t.string :content
       t.references :task, foreign_key: true

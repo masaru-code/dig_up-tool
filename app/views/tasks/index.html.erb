@@ -1,8 +1,9 @@
 <div class="task-title-area px-3">
-  <h1>工程作成    提案者：<%= @yuser %> <%= @ytask %></h1>
+  <h1>工程作成    提案者：<%= @yuser %> </h1>
   <% if @yuser %>
-    <%= link_to new_task_path, title: "New", class: "btn p-0 text-dark", remote: true do %>
-      <i class="fas fa-plus align-middle pr-1"></i><span class="align-middle">やりたい事作作成</span>
+    <%= link_to new_task_path, title: "New", class: "btn p-0 text-dark", local: true do %>
+      <i class="fas fa-plus align-middle pr-1">
+      </i><span class="align-middle">やりたい事作作成</span>
     <% end %>
   </div>
   <div class="pt-3 p-1 text-nowrap task-index-area" id="tasksIndex">

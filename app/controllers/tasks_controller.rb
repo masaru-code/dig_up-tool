@@ -23,7 +23,7 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
     @task = current_user.tasks.build(task_params)
 
     if @task.save
-      # redirect_to task_chat_rooms_path(@task)
+      redirect_to task_chat_rooms_path(@task)
       @status = true
     else
       render :new

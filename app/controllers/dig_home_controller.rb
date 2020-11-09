@@ -10,7 +10,14 @@ PER = 5
   def dig_index
     #@users = User.page(params[:page]) 
     @users = User.page(params[:page]).per(PER)
-  end  
+  end
+  
+  def minna
+    @tasks = Task.all
+    @tasksname = Task.select("name")
+    @users = User.all
+    @usersname = User.select("name")
+  end
   
   def show
   end
