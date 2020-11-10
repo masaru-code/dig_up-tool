@@ -1,6 +1,6 @@
 class Todo < ApplicationRecord
-  belongs_to :goal
-  acts_as_list scope: [:goal_id]
+  belongs_to :task
+  acts_as_list scope: [:task_id]
 
   validates :position, numericality: { only_integer: true, allow_nil: true }
   validates :content, presence: true

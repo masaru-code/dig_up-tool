@@ -18,7 +18,7 @@ class ChatRoomsController < ApplicationController
     end
     
     if @task.save
-      redirect_to goals_path(@task)
+      redirect_to tasks_path(@task)
     end
   end
   

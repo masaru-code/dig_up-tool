@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :goals do
+  resources :tasks do
     resources :todos do
       member do
         get "sort"
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   
+  resources :dig_home
   resources :chat_rooms
   resources :users
   
