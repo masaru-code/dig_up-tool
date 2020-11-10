@@ -1,5 +1,4 @@
 class DigHomeController < ApplicationController
-
 #before_action :logged_in_user, only: [:jikou, :jikou_end, :chat_room, :minnna, :proces]deviseで自動生成
 PER = 5
   
@@ -13,10 +12,16 @@ PER = 5
   end
   
   def minna
-    @tasks = Task.all
-    @tasksname = Task.select("name")
     @users = User.all
-    @usersname = User.select("name")
+    @menbers = User.select("name")
+    @tasks = Task.all
+  end
+  
+  def new
+    @menber = params(men_params)[:name]
+  end
+  
+  def create
   end
   
   def show
@@ -28,6 +33,12 @@ PER = 5
   end
   
 private
+  def user_search_params
+    params.fetch(:search, {}).permit(:name)
+  end
 
+  def men_params
+    params.permit(:name)
+  end
 
 end
