@@ -10,13 +10,6 @@ PER = 5
     @users = User.page(params[:page]).per(PER)
   end
   
-  def minna
-    @users = User.all
-    @menbers = User.select("name")
-    @tasks = Task.all
-    @menber = params[:name]
-  end
-  
   def show
   end
   

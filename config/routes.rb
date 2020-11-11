@@ -8,14 +8,11 @@ Rails.application.routes.draw do
     end
   end
   get 'chat_rooms/index'
-  get 'users/index'
-
   root 'dig_top#home'
   # root to: "home#index"  
  
   get 'dig_home/dighome'
   get 'dig_home/chat_room'
-  get 'dig_home/minna'
   get 'dig_home/dig_index'
   get 'dig_top/help'
   get 'dig_top/setumei'
