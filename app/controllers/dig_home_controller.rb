@@ -3,7 +3,6 @@ class DigHomeController < ApplicationController
 PER = 5
   
   def dighome
-  
   end
 
   def dig_index
@@ -15,13 +14,7 @@ PER = 5
     @users = User.all
     @menbers = User.select("name")
     @tasks = Task.all
-  end
-  
-  def new
-    @menber = params(men_params)[:name]
-  end
-  
-  def create
+    @menber = params[:name]
   end
   
   def show
@@ -35,10 +28,6 @@ PER = 5
 private
   def user_search_params
     params.fetch(:search, {}).permit(:name)
-  end
-
-  def men_params
-    params.permit(:name)
   end
 
 end

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   end
   get 'chat_rooms/index'
+  get 'users/index'
 
   root 'dig_top#home'
   # root to: "home#index"  
@@ -21,7 +22,6 @@ Rails.application.routes.draw do
   
   devise_for :users
   
-  resources :dig_home
   resources :chat_rooms
   resources :users
   
