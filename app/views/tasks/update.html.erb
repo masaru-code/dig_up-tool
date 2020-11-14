@@ -1,0 +1,8 @@
+<% if user.tasks.todo.any? %> 
+  <% curennt_user.tasks.todo each do |swhich| %>
+  <% if current_user.tasks.status = true %>
+      <%= current_user.tasks.status = false %>
+  end
+  <%= current_user.tasks.status = done %> 
+  notice: "実行したい事一覧に移動しました"
+end  

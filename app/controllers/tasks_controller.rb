@@ -48,11 +48,26 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :image, :user_id, :task_id)
+    params.require(:task).permit(:name, :image, :user_id, :task_id, :update)
   end
   
   def set_task
     @task = current_user.tasks.find(params[:id])
   end
+  
+  def check_ten_todo
+    if user.tasks.todo.any? 
+      user.tasks.todo.each do |id=0| 
+        if id < 10
+          id += 1
+          if id = null
+            break
+          end 
+        else 
+            redirect_to root_path, notice: "やりたい事１０個を超えました全行程終了してください"
+        end
+      end
+    end
+  end  
   
 end
