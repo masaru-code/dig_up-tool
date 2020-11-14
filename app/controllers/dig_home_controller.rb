@@ -1,27 +1,14 @@
 class DigHomeController < ApplicationController
+before_action :authenticate_user!
 #before_action :logged_in_user, only: [:jikou, :jikou_end, :chat_room, :minnna, :proces]deviseで自動生成
 PER = 5
   
   def dighome
-  
   end
 
   def dig_index
     #@users = User.page(params[:page]) 
     @users = User.page(params[:page]).per(PER)
-  end
-  
-  def minna
-    @users = User.all
-    @menbers = User.select("name")
-    @tasks = Task.all
-  end
-  
-  def new
-    @menber = params(men_params)[:name]
-  end
-  
-  def create
   end
   
   def show
@@ -35,10 +22,6 @@ PER = 5
 private
   def user_search_params
     params.fetch(:search, {}).permit(:name)
-  end
-
-  def men_params
-    params.permit(:name)
   end
 
 end

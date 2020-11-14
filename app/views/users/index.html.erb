@@ -1,0 +1,24 @@
+<h1>みんなのやりたい事一覧</h1>
+<%= form_with url: users_path,method: :get, local: true do |f| %>
+  <%= f.label :name, '検索したいユーザー名' %>
+  <%= f.text_field :name %>
+  <%= f.submit "送信" %>
+<% end %>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_for user, size: 50 %>
+      <%= user.name %><br>
+      <% if user.tasks.todo.any? %>
+        <% user.tasks.todo.each do |task| %>
+            やりたい事: <%= task.name %>
+          <%= link_to "チャットルームへ", task_chat_rooms_path(task), class: "btn btn-primary" %>
+          <%= link_to "工程ページへ", tasks_path, class: "btn btn-primary" %><br>
+ 
+        <% end %>
+      <% end %>
+    </li>
+
+  <% end %>
+</ul>
