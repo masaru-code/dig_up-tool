@@ -3,10 +3,38 @@
 @import "forms";
 @import "devise";
 @import "chat_rooms";
-
+@import "dig_top";
 @import "scaffolds";
 @import "tasks";
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+  text-align: center;
+}
+/*説明*/
+.setumei-page{
+  float: left;
+  margin-left: 50px;
+        /* 背景をグラデーションにする */
+  background: linear-gradient(45deg, #10100E, #A72F37);
+  color:#cccccc;
+}
+// dig_top
+.big-bg{
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+#home {
+  background-image: url(workspace/dig_up/app/images/970138_s.jpg) ;
+  min-height: 100vh;
+}
+#home .page-title{
+  text-transform: none;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
