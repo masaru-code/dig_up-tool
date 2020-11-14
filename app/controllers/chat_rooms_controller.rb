@@ -2,7 +2,7 @@ class ChatRoomsController < ApplicationController
   before_action :set_task
   
   def index
-     @comments = Comment.all
+     @comments = @task.comments
      @comment = Comment.new
     render layout: false
   end
@@ -17,9 +17,9 @@ class ChatRoomsController < ApplicationController
       render :index
     end
     
-    if @task.save
-      redirect_to tasks_path(@task)
-    end
+    # if @task.save
+    #   redirect_to tasks_path(@task)
+    # end
   end
   
   private

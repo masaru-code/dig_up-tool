@@ -1,19 +1,18 @@
 class TasksController < ApplicationController
-before_action :authenticate_user!
-before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :check_ten_todo, only: [:create]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = Task.todo.order(updated_at: :desc).page(params[:page])
-    @gtasks = current_user.tasks.all
+    @tasks = current_user.tasks.todo.order(updated_at: :desc).page(params[:page])
     @yuser = current_user.name
   end
   
   def new
     @task = current_user.tasks.build
-
-    # if (task_id <= 10)
-    #   @task = current_user.tasks.new
-    # end
+  end 
+  
+  def show
   end
   
   def edit
@@ -32,13 +31,13 @@ before_action :set_task, only: [:show, :edit, :update, :destroy]
   end
 
 
-def update
+  def update
     if @task.update(task_params)
        @status = true
     else
        @status = false
     end
-end
+  end
 
   # DELETEs/1
   def destroy
@@ -46,18 +45,14 @@ end
   end
 
   
-  def show
-  end
-  
-private
+  private
 
   def task_params
     params.require(:task).permit(:name, :image, :user_id, :task_id)
   end
   
   def set_task
-   @task = current_user.tasks.find_by(id: params[:id])
-   redirect_to(tasks_url, alert: "ERROR!!") if @task.blank?
+    @task = current_user.tasks.find(params[:id])
   end
   
 end

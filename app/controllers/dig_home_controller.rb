@@ -1,4 +1,5 @@
 class DigHomeController < ApplicationController
+before_action :authenticate_user!
 #before_action :logged_in_user, only: [:jikou, :jikou_end, :chat_room, :minnna, :proces]deviseで自動生成
 PER = 5
   
