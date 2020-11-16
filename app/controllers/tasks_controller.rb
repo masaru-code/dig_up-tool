@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :check_ten_todo, only: [:create]
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:update]
   
   def index
     @tasks = current_user.tasks.todo.order(updated_at: :desc).page(params[:page])
@@ -33,8 +33,10 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-       @status = true
-       @koutei = current_user.tasks.select("todo")
+       @koutei = current_user.tasks.select("todo")      
+       @status = task.done!
+       current_user.tasks.done = @koutei
+       redirect_to task_path
     else
        @status = false
     end
@@ -49,7 +51,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :image, :user_id, :task_id)
+    params.require(:task).permit(:user_id)
   end
   
   def set_task
