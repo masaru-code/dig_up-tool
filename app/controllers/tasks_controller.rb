@@ -34,6 +34,7 @@ class TasksController < ApplicationController
   def update
     if @task.update(task_params)
        @status = true
+       @koutei = current_user.tasks.select("todo")
     else
        @status = false
     end
@@ -54,5 +55,9 @@ class TasksController < ApplicationController
   def set_task
     @task = current_user.tasks.find(params[:id])
   end
+  
+def check_ten_todo
+redirect_to root_path, notice: 'やりたい事は10個以上を登録できません。全行程終了してから再度お試しください。' if current_user.tasks.todo.size == 10
+end
   
 end

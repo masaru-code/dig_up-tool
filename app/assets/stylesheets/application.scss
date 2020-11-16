@@ -3,10 +3,81 @@
 @import "forms";
 @import "devise";
 @import "chat_rooms";
-
+@import "dig_top";
 @import "scaffolds";
 @import "tasks";
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
+
+.container{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+  text-align: center;
+}
+/*説明*/
+.setumei-page{
+  float: left;
+  margin-left: 50px;
+        /* 背景をグラデーションにする */
+  background: linear-gradient(45deg, #10100E, #A72F37);
+  color:#cccccc;
+}
+// sinup Login
+.new-contents{
+  display: flex;
+  justify-content: space-between;
+}
+.jumbotron{
+  width: 40%;
+  margin: 50px 0px 0px 20px;
+}
+aside{
+  margin-top: 50px;
+  width: 55%;
+}
+// ユーザー一覧
+.users-itiran{
+  list-style: none;
+  font-family: serif;
+}
+.users-itiran h1{
+  margin: 30px 0px 20px 0px;  
+}
+.kaminari{
+  margin-top: 10px;
+  margin-left: 600px;
+}
+.users{
+  list-style: none;
+  text-align: left;
+}
+.gravatar{
+  margin: 10px 80px 10px 100px;
+  list-style: none;
+  font-size: 200%;
+  border-bottom: solid 1px #dbedf0 ;
+  font-color: #6e0033
+}
+// みんなのやりたい事一覧
+.seach-itiran{
+  list-style: none;
+  font-family: serif;
+}
+.seach-itiran h1{
+  margin: 50px 0px 20px 0px;  
+}
+.seach-users{
+  list-style: none;
+  text-align: center;
+  margin: 10px 0 0 80px;
+}
+.seach-users p{
+  font-size: 150%;
+}
+.seach {
+  text-align: center;
+  padding: 10px 10px 10px 80px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

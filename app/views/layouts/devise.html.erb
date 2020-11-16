@@ -8,20 +8,18 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-    <body>
     <%= render "layouts/header" %>
     <%= render "layouts/flash" %>
-    <div class = "masaru-devise">
-    <main class="bg-home d-flex align-items-center w-100 h-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-11 col-lg-5 jumbotron mx-auto mt-4" style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2)">
+    <div class="new-contents wrapper">
+          <div class="jumbotron" style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2)">
             <%= yield %>
           </div>
-        </div>
-      </div>
-    </main>
+          <aside>
+            <!--<p>-->
+            <!--  <%#= image_tag 'YK0I9A6205_TP_V.jp', :size => '69x37' %>-->
+            <!--</p>-->
+          </aside>
     </div>
+    </div><!-- /.news-contents -->
     <%= render "layouts/footer" %>
-  </body>
 </html>    

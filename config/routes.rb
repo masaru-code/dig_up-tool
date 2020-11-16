@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   
   get 'chat_rooms/index'
   root 'dig_top#home'
-  # root to: "home#index"  
  
   get 'dig_home/dighome'
   get 'dig_home/chat_room'

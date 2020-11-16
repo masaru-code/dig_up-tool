@@ -1,18 +1,23 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 .digtop{
-  margin-top: 50px;
+  margin-top: 120px;
+  font-family: serif;
 }
-.container{
-  text-align:  center;
-}
-.container h1{
-  padding :  30px 0px 30px 0px;
+.digtop p{
+  margin: 30px 0px 50px 0px;
 }
 .touroku-btn{
-  padding :  15px 0px 30px 0px;
+  margin-top: 30px;
 }
-.container p{
-  padding-bottom:  15px;
+// dig_top
+.big-bg{
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat
+}
+#home {
+  background-image: url(image/970138_s.jpg) ;
+  min-height: 100vh;
+}
+#home .page-title{
+  text-transform: none;
 }

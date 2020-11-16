@@ -1,4 +1,6 @@
 class DigTopController < ApplicationController
+  layout 'digtop'
+  
   def home
   end
 

@@ -1,37 +1,5 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-/*header*/
-.header{
-  /*background-color: rgba(34,49,52,0.9);*/
-  position:fixed;
-  top:0;
-  z-index: 10;
-  withd: auto;
-  width: 100%;
-  height: 50px;
-}
-
-
-
-/*登録*/
-.sintouroku{
-  margin-left:    500px;
-  .field{
-  padding-bottom: 10px;
-  }
-}
-/*説明*/
-.setumei-page{
-  float: left;
-  margin-left: 50px;
-        /* 背景をグラデーションにする */
-  background: linear-gradient(45deg, #10100E, #A72F37);
-  color:#cccccc;
-}
-.setumei-page h1{
-　　margin-top: 10px;
-　　margin-left: 100px;
+.container{
+  text-aligin: center;
 }
 
 /* Users index */
@@ -48,8 +16,4 @@
 // chat_room
 .chat_footer{
   margin-top: 300px;
-}
-//devise
-.masaru-devise{
-  
 }
