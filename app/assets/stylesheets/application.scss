@@ -22,18 +22,61 @@
   background: linear-gradient(45deg, #10100E, #A72F37);
   color:#cccccc;
 }
-// dig_top
-.big-bg{
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+// sinup Login
+.new-contents{
+  display: flex;
+  justify-content: space-between;
 }
-#home {
-  background-image: url(workspace/dig_up/app/images/970138_s.jpg) ;
-  min-height: 100vh;
+.jumbotron{
+  width: 40%;
+  margin: 50px 0px 0px 20px;
 }
-#home .page-title{
-  text-transform: none;
+aside{
+  margin-top: 50px;
+  width: 55%;
+}
+// ユーザー一覧
+.users-itiran{
+  list-style: none;
+  font-family: serif;
+}
+.users-itiran h1{
+  margin: 30px 0px 20px 0px;  
+}
+.kaminari{
+  margin-top: 10px;
+  margin-left: 600px;
+}
+.users{
+  list-style: none;
+  text-align: left;
+}
+.gravatar{
+  margin: 10px 80px 10px 100px;
+  list-style: none;
+  font-size: 200%;
+  border-bottom: solid 1px #dbedf0 ;
+  font-color: #6e0033
+}
+// みんなのやりたい事一覧
+.seach-itiran{
+  list-style: none;
+  font-family: serif;
+}
+.seach-itiran h1{
+  margin: 50px 0px 20px 0px;  
+}
+.seach-users{
+  list-style: none;
+  text-align: center;
+  margin: 10px 0 0 80px;
+}
+.seach-users p{
+  font-size: 150%;
+}
+.seach {
+  text-align: center;
+  padding: 10px 10px 10px 80px;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

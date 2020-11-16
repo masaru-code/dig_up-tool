@@ -34,6 +34,7 @@ class TasksController < ApplicationController
   def update
     if @task.update(task_params)
        @status = true
+       @koutei = current_user.tasks.select("todo")
     else
        @status = false
     end
@@ -48,26 +49,15 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :image, :user_id, :task_id, :update)
+    params.require(:task).permit(:name, :image, :user_id, :task_id)
   end
   
   def set_task
     @task = current_user.tasks.find(params[:id])
   end
   
-  def check_ten_todo
-    if user.tasks.todo.any? 
-      user.tasks.todo.each do |id=0| 
-        if id < 10
-          id += 1
-          if id = null
-            break
-          end 
-        else 
-            redirect_to root_path, notice: "やりたい事１０個を超えました全行程終了してください"
-        end
-      end
-    end
-  end  
+def check_ten_todo
+redirect_to root_path, notice: 'やりたい事は10個以上を登録できません。全行程終了してから再度お試しください。' if current_user.tasks.todo.size == 10
+end
   
 end
