@@ -9,9 +9,10 @@
   <div class= "seach-users">  
       <ul>
         <% @users.each do |user| %>
-          <li>
+          <div class= "minna-name">
             <%= gravatar_for user, size: 50 %>
             <p><%= user.name %></p><br>
+          </div>  
             <% if user.tasks.todo.any? %>
               <% user.tasks.todo.each do |task| %>
                 <div class="seach">              
@@ -21,7 +22,6 @@
                 </div>
               <% end %>
             <% end %>
-          </li>
         <% end %>
       </ul>
   </div>  

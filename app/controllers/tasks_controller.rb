@@ -32,14 +32,14 @@ class TasksController < ApplicationController
 
 
   def update
-    if @task.update(task_params)
+    # if @task.update(task_params)
        @koutei = current_user.tasks.select("todo")      
-       @status = task.done!
-       current_user.tasks.done = @koutei
+       current_user.tasks.done!
+       current_user.tasks = @koutei
        redirect_to task_path
-    else
-       @status = false
-    end
+    # else
+    #   @status = false
+    # end
   end
 
   # DELETEs/1
