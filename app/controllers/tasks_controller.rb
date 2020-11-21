@@ -31,16 +31,13 @@ class TasksController < ApplicationController
   end
 
 
-  def update
-    # if @task.update(task_params)
-       @koutei = current_user.tasks.select("todo")      
-       current_user.tasks.done!
-       current_user.tasks = @koutei
-       redirect_to task_path
-    # else
-    #   @status = false
-    # end
-  end
+  # def update
+  #   if @task.complete
+  #     redirect_to tasks_path
+  #   else
+  #     render :index
+  #   end
+  # end
 
   # DELETEs/1
   def destroy

@@ -10,13 +10,19 @@
 }
 // dig_top
 .big-bg{
+  width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat
 }
 #home {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
   background-image: url(image/970138_s.jpg) ;
-  min-height: 100vh;
+
 }
 #home .page-title{
   text-transform: none;

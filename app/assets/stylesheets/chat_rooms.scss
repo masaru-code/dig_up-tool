@@ -1,12 +1,50 @@
 // Place all the styles related to the chat_rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.header-right{
-  margin-left: 650px;
-  margin-top : 10px;
+// ヘッダー
+.chat-wrapper{
+  font-family: serif;
+  text-align: center;
+  background-image: url(image/273020_s.jpg) ;
+  margin-top: -30px;
 }
-.header-name {
-    margin-top:  10px;
-    margin-left: 30px;
-    padding-left: 30px;
+.chat-nav{
+  display: flex;
+}
+.chat-nav li{
+  list-style: none;
+  margin-left: 30px;
+  font-size: 1.25rem;
+  margin-top: 50px;
+}
+.chat-nav h3{
+  margin: 40px 650px 0px 80px;
+}
+
+.chat-name h4{
+  margin: 15px 0px 15px 0px
+}
+// チャット表示
+.chat-hyouji{
+  font-family: serif;
+}
+.chat-hyouji h2{
+  margin: 15px 0px 15px 500px;
+  text-aligin: center;
+}
+.grava-name-coment{
+  width: 1000px;
+  list-style: none;
+  text-aligin: left;
+}
+.grava-name-coment li{
+  border-bottom: solid 1px #dbedf0;
+  text-aligin: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grava-name-coment p{
+  padding-top: 16px;
+  color: #d58d9d;
 }
