@@ -11,14 +11,12 @@
     <%= render "layouts/header" %>
     <%= render "layouts/flash" %>
     <div class="new-contents wrapper">
-          <div class="jumbotron" style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2)">
-            <%= yield %>
-          </div>
-          <aside>
-            <!--<p>-->
-            <!--  <%#= image_tag 'YK0I9A6205_TP_V.jp', :size => '69x37' %>-->
-            <!--</p>-->
-          </aside>
+      <div class="jumbotron" style="box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2)">
+        <%= yield %>
+      </div>
+      <aside>
+        <%= image_tag "YK0I9A6205_TP_V.jpg" ,width:"650px" ,height:"650px" %>
+      </aside>
     </div>
     </div><!-- /.news-contents -->
     <%= render "layouts/footer" %>

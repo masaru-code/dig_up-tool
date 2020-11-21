@@ -1,7 +1,14 @@
-<h1>Dig_up Tool</h1>
-<p>登録ユーザー/招待ユーザー  :<%= User.all.size %>/2</p>
-<h3>最初は実行したい事から入ってください</h3>
-<%= link_to "ユーザー一覧", dig_home_dig_index_path, class: "digindex" %>
-<%= link_to "実行したいこと", new_task_path, class: "btn btn-primary" %>
-<%= link_to "みんなのやりたい事一覧", users_path, class: "btn btn-primary" %>
-<%= link_to "今まで実行した事", endshow_index_path, class: "btn btn-primary" %>
+<div class="dighome wrapper">
+  <div class="dighome-left">
+    <h1>Dig_up Tool</h1>
+    <p>登録ユーザー/招待ユーザー  :<%= User.all.size %>/2</p>
+    <h5>最初は実行したい事から入ってください</h5>
+    <%= link_to "ユーザー一覧", dig_home_dig_index_path, class: "digindex" %><br>
+    <%= link_to "実行したいこと", new_task_path, class: "btn btn-primary" %><br>
+    <%= link_to "みんなのやりたい事一覧", users_path, class: "btn btn-primary" %><br>
+    <%= link_to "今まで実行した事", endshow_index_path, class: "btn btn-primary" %><br>
+  </div>
+  <aside-home>
+    <p>test</p>
+  </aside-home>
+</div>  

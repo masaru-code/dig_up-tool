@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<html>
 <head>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-    <%= render 'chat_header' %>　
-    <div class = container>
-      
-      <h2>コメント一覧</h2>
-      <% if @comments.any? %>
-      <ul>
-      <% @comments.each do |comment| %>
-      <li><%= gravatar_for comment.user, size: 50 %><%= comment.user&.name %>: <%= comment.content %>
-      <% if comment.image.attached? %>
-        <%= image_tag comment.image.variant(resize: "100x100") %>
-      <% end %>       
-      </li>
 
-      <% end %>
-      </ul>
-      <% end %>
-      
-  
-    <%= render 'chat_footer' %>  
-    </div>
+<%= render 'chat_header' %>
 
-</html>
+<div class="chat-hyouji">
+  <h2>コメント一覧</h2>
+    <% if @comments.any? %>
+    <ul>
+      <div class= "grava-name-coment">
+        <% @comments.each do |comment| %>
+          <li><%= gravatar_for comment.user, size: 50 %><p><%= comment.user&.name %></p>: <%= comment.content %>
+          <% if comment.image.attached? %>
+            <%= image_tag comment.image.variant(resize: "100x100") %>
+          <% end %>       
+          </li>
+        <% end %>
+      </div>
+    </ul>
+    <% end %>
+</div> 
 
