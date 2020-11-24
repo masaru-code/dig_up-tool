@@ -10,5 +10,10 @@
   </div>
   <aside-home>
     <p>test</p>
+    <% @alltask.each do |task| %>
+      <div class= "alltask">
+        <%= gravatar_for user, size: 50 %>
+        <h3><%= task.name %></h3>
+      </div>  
   </aside-home>
 </div>  

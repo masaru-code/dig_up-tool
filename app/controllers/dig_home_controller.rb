@@ -4,6 +4,7 @@ class DigHomeController < ApplicationController
 PER = 5
   
   def dighome
+    @alltask = Task.oder("id DESC")
   end
 
   def dig_index
