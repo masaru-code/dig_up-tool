@@ -8,4 +8,13 @@ class Task < ApplicationRecord
   enum status: { todo: 0, doing: 1, done: 2 }
   validates :name, presence: true
   
+  def complete
+    ActiveRecord::Base.transaction do
+    done!
+    todos.update_all(done: true)
+    end
+    true
+  rescue => e
+    false
+  end
 end

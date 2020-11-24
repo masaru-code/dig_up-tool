@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'dig_home/dig_index'
   get 'dig_top/help'
   get 'dig_top/setumei'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   
   devise_for :users
   
