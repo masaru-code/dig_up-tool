@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :check_ten_todo, only: [:create]
   before_action :set_task, only: [:update]
   
