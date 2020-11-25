@@ -42,14 +42,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_075539) do
     t.index ["task_id"], name: "index_comments_on_task_id"
   end
 
-  create_table "goals", force: :cascade do |t|
-    t.string "title"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_goals_on_user_id"
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.integer "user_id"
     t.string "name", null: false
@@ -86,16 +78,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_075539) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
-  end
-
-  create_table "work_schedules", force: :cascade do |t|
-    t.integer "task_id"
-    t.string "name", null: false
-    t.integer "position", default: 1
-    t.text "advise"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_work_schedules_on_task_id"
   end
 
 end
