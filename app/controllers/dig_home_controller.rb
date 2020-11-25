@@ -4,9 +4,8 @@ class DigHomeController < ApplicationController
 PER = 5
   
   def dighome
-    @a = 0
     @alluser = User.all
-    @alltask = Task.order(created_at: :desc)
+    @alltask = Task.order(created_at: :desc).limit(30)
   end
 
   def dig_index
