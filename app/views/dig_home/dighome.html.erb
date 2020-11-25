@@ -9,11 +9,17 @@
     <%= link_to "今まで実行した事", endshow_index_path, class: "btn btn-primary" %><br>
   </div>
   <aside-home>
-    <p>test</p>
+    <p>最新の３０件</p>
     <% @alltask.each do |task| %>
-      <div class= "alltask">
-        <%= gravatar_for user, size: 50 %>
-        <h3><%= task.name %></h3>
-      </div>  
+      <% if @a<30? %>
+        <div class= "alltask">
+          <%= task.user&.name %><%= task.name %>
+        </div>
+        <% @a += 1 %> 
+      <% end %>  
+    <% end %>
   </aside-home>
-</div>  
+
+  <div class= "item">
+  </div> 
+</div>

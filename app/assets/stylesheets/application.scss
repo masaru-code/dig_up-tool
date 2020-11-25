@@ -122,18 +122,24 @@ aside{
 // dighomeページ
 .dighome{
   width: 1100px;
+  height:700px;
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   font-family: serif;
+  // background-image: url(image/1796066_s.jpg), linear-gradient(#3d6088,#ffafbd) ;
+  background-size: cover;
+  background-blend-mode: luminosity;
 }
 .dighome-left{
   height: 500px;
-  width: 85%;
-  // background-image: url(image/1796066_s.jpg) ;
+  width: 60%;
 }
 .aside-home{
-  width: 15%;
+  width: 38%;
+}
+.alltask{
+  color: #492c8f
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
