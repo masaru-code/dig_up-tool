@@ -31,13 +31,13 @@ class TasksController < ApplicationController
   end
 
 
-  # def update
-  #   if @task.complete
-  #     redirect_to tasks_path
-  #   else
-  #     render :index
-  #   end
-  # end
+   def update
+     if @task.complete
+       redirect_to tasks_path
+     else
+       render :index
+     end
+   end
 
   # DELETEs/1
   def destroy

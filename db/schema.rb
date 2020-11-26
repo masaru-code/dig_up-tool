@@ -51,6 +51,16 @@ ActiveRecord::Schema.define(version: 2020_11_09_075539) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
+  create_table "todos", force: :cascade do |t|
+    t.string "content"
+    t.integer "task_id"
+    t.integer "position"
+    t.boolean "done", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_todos_on_task_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

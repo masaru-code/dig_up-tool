@@ -44,6 +44,9 @@ aside{
   list-style: none;
   font-family: serif;
 }
+.users-itiran p{
+  margin-left: 800px;
+}
 .users-itiran h1{
   text-align: center;
   margin: 30px 0px 20px 0px; 
@@ -127,13 +130,13 @@ aside{
   display: flex;
   justify-content: space-between;
   font-family: serif;
-  // background-image: url(image/1796066_s.jpg), linear-gradient(#3d6088,#ffafbd) ;
-  background-size: cover;
-  background-blend-mode: luminosity;
 }
 .dighome-left{
-  height: 500px;
+  padding-left: 20px;
   width: 60%;
+}
+.dighome-item{
+  margin-top: 30px;
 }
 .aside-home{
   width: 38%;
