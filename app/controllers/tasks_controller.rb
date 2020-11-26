@@ -18,6 +18,10 @@ class TasksController < ApplicationController
   def edit
   end
 
+  def endshow_index
+    @tasks = current_user.tasks.done.order(updated_at: :desc).page(params[:page])
+  end
+
   def create
     @task = current_user.tasks.build(task_params)
 

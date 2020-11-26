@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   
+  resources :endshow
   resources :chat_rooms
   resources :users
   resources :endshow
