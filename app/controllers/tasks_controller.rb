@@ -2,9 +2,11 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :check_ten_todo, only: [:create]
   before_action :set_task, only: [:update]
+  before_action :set_user, only: %i(index)
   
   def index
-    @tasks = current_user.tasks.todo.order(updated_at: :desc).page(params[:page])
+    user = params[:user_id].present? ? @user : current_user
+    @tasks = user.tasks.todo.order(updated_at: :desc).page(params[:page])
     @yuser = current_user.name
   end
   
@@ -61,6 +63,10 @@ class TasksController < ApplicationController
   
   def check_ten_todo
     redirect_to root_path, notice: 'やりたい事は10個以上を登録できません。全行程終了してから再度お試しください。' if current_user.tasks.todo.size == 10
+  end
+
+  def set_user
+    @user = User.find(params[:user_id]) if params[:user_id].present?
   end
   
 end

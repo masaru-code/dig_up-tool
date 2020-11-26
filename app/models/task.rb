@@ -17,4 +17,5 @@ class Task < ApplicationRecord
   rescue => e
     false
   end
+  
 end
