@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :check_ten_todo, only: [:create]
   before_action :set_task, only: [:update]
   
@@ -18,6 +18,10 @@ class TasksController < ApplicationController
   def edit
   end
 
+  def endshow_index
+    @tasks = current_user.tasks.done.order(updated_at: :desc).page(params[:page])
+  end
+
   def create
     @task = current_user.tasks.build(task_params)
 
@@ -31,13 +35,13 @@ class TasksController < ApplicationController
   end
 
 
-  # def update
-  #   if @task.complete
-  #     redirect_to tasks_path
-  #   else
-  #     render :index
-  #   end
-  # end
+   def update
+     if @task.complete
+       redirect_to tasks_path
+     else
+       render :index
+     end
+   end
 
   # DELETEs/1
   def destroy
