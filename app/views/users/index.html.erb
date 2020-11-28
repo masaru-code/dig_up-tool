@@ -5,24 +5,25 @@
     <%= f.text_field :name %>
     <%= f.submit "送信" %>
   <% end %>
-  <% @users.each do |user| %>
+</div>
+
+<% @users.each do |user| %>
   <div class= "minna-name">
     <%= gravatar_for user, size: 50 %>
     <h3><%= user.name %></h3>
-  </div>  
-</div>
+  </div>
 
-<ul>
-<% if user.tasks.todo.any? %>
-  <% user.tasks.todo.each do |task| %>
-    <div class="seach">            
-      <h5><%= task.name %></h5>
-    </div>    
-    <div class="btn-itiran">
-      <%= link_to "チャットルームへ", task_chat_rooms_path(task), class: "btn btn-primary" %>
-      <%= link_to "工程ページへ", tasks_path(task), class: "btn btn-primary" %><br>
-    </div> 
-  <% end %>  
-  <% end %>
+  <ul>
+    <% if user.tasks.todo.any? %>
+      <% user.tasks.todo.each do |task| %>
+        <div class="seach">
+          <h5><%= task.name %></h5>
+        </div>
+        <div class="btn-itiran">
+          <%= link_to "チャットルームへ", task_chat_rooms_path(task), class: "btn btn-primary" %>
+          <%= link_to "工程ページへ", user_tasks_path(user), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>
 <% end %>
-</ul>

@@ -103,7 +103,7 @@ aside{
 .task-new{
   font-family: serif;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .grid{
   margin-left: 30px;
@@ -111,7 +111,7 @@ aside{
   display: grid;
   gap: 26px;
   grid-template-columns: 1fr 1fr 1fr;
-  margin-top: 6%;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 // 提案者の工程ページ
@@ -142,8 +142,10 @@ aside{
   width: 38%;
 }
 .alltask{
-  color: #492c8f
+  color: #492c8f;
+  border-bottom: solid 1px #239fb4;
 }
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
