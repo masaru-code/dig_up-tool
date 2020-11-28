@@ -5,10 +5,8 @@ class TasksController < ApplicationController
   before_action :set_user, only: %i(index)
   
   def index
-    user = params[:user_id].present? ? @user : current_user
-    @tasks = user.tasks.todo.order(updated_at: :desc).page(params[:page])
-    @yuser = current_user.name
-  end
+    @user = params[:user_id].present? ? @user : current_user
+    @tasks = @user.tasks.todo.order(updated_at: :desc).page(params[:page])
   
   def new
     @task = current_user.tasks.build
