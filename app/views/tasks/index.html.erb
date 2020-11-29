@@ -1,5 +1,5 @@
 <div class="task-title-area px-3">
-  <h2>工程作成    提案者：<%= @user&name %> <%= link_to "前のページに戻る",:back %></h2>
+  <h2>工程作成    提案者：<%= @user.name %> <%= link_to "back",:back %></h2>
   <%= link_to new_task_path, title: "New", class: "btn p-0 text-dark", local: true do %>
   <span class="align-middle">やりたい事作成ページへ</span>
 </div>

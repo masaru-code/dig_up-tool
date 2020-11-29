@@ -1,0 +1,18 @@
+<% @users.each do |user| %>
+    <div class= "minna-name">
+      <%= gravatar_for user, size: 50 %>
+      <h3><%= user.name %></h3>
+    </div>
+    <ul>
+    <% if user.tasks.done.any? %>
+      <% user.tasks.done.each do |task| %>
+        <div class="seach">
+          <h5><%= task.name %></h5>
+        </div>
+        <div class="btn-itiran">
+          <%= link_to "工程ページへ", user_tasks_path(user), class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% end %>
+  </ul>   
+<% end %>
