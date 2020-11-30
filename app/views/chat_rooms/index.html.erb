@@ -15,7 +15,7 @@
     <ul>
       <div class= "grava-name-coment">
         <% @comments.each do |comment| %>
-          <li><%= gravatar_for comment.user, size: 50 %><p><%= comment.user&.name %></p>: <%= comment.content %>
+          <li><%= gravatar_for comment.user, size: 50 %><p><%= comment.user&.name %></p>&nbsp;:&nbsp; <%= comment.content %>
           <% if comment.image.attached? %>
             <%= image_tag comment.image.variant(resize: "100x100") %>
           <% end %>       

@@ -14,7 +14,7 @@
     <% @alltask.each do |task| %>
       <% if @a<30 %>
         <div class= "alltask">
-          <%= task.user&.name %> <%= task.name %>
+          <%= task.user&.name %>&nbsp:&emsp; <%= task.name %>
           <% @a += 1 %> 
         </div>
       <% end %>
