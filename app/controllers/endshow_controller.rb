@@ -1,6 +1,7 @@
 class EndshowController < ApplicationController
+    before_action :authenticate_user!
+
     def index
-        @user = params[:user_id].present? ? @user : current_user
-        @tasks = @user.tasks.done.order(updated_at: :desc).page(params[:page])
+      @users = params[:name].present? ? User.where('name LIKE ?', "%#{params[:name]}%") : User.none
     end
 end
