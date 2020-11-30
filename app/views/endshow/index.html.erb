@@ -1,3 +1,12 @@
+<div class = "seach-itiran">
+  <h1>実行した事一覧</h1>
+  <%= form_with url: users_path,method: :get, local: true do |f| %>
+    <%= f.label :name, '検索したいユーザー名' %>
+    <%= f.text_field :name %>
+    <%= f.submit "送信" %>
+  <% end %>
+</div>
+
 <% @users.each do |user| %>
     <div class= "minna-name">
       <%= gravatar_for user, size: 50 %>
