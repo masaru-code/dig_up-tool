@@ -6,7 +6,8 @@ class EndshowController < ApplicationController
     end
 
     def show
-      @user = params[:user_id].present? ?
+      @user = User.find(params[:user_id])
       @tasks = @user.tasks.done.order(updated_at: :desc).page(params[:page])
-    end
+    end  
+
 end
