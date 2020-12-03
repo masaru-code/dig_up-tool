@@ -35,7 +35,6 @@ class TasksController < ApplicationController
     end
   end
 
-
    def update
      if @task.complete
        redirect_to tasks_path
