@@ -1,6 +1,6 @@
 <div class = "seach-itiran">
   <h1>実行した事一覧</h1>
-  <%= form_with url: users_path,method: :get, local: true do |f| %>
+  <%= form_with url: endshow_index_path,method: :get, local: true do |f| %>
     <%= f.label :name, '検索したいユーザー名' %>
     <%= f.text_field :name %>
     <%= f.submit "送信" %>
@@ -8,20 +8,18 @@
 </div>
 
 <% @users.each do |user| %>
-    <div class= "minna-name">
-      <%= gravatar_for user, size: 50 %>
-      <h3><%= user.name %></h3>
-    </div>
-    <ul>
+  <div class = "ji-itiran">
     <% if user.tasks.done.any? %>
-      <% user.tasks.done.each do |task| %>
-        <div class="seach">
-          <h5><%= task.name %></h5>
-        </div>
-        <div class="btn-itiran">
-          <%= link_to "工程ページへ", user_tasks_path(user), class: "btn btn-primary" %>
-        </div>
-      <% end %>
+      <ul>
+        <% user.tasks.done.each do |task| %>
+          <div class = "ji-koutei">
+            <%= gravatar_for user, size: 50 %>
+            <h3><%= user.name %></h3>&emsp;&emsp;
+            <h5><%= task.name %></h5>&emsp;&emsp;
+            <%= link_to "工程ページへ", endshow_path(user), class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </ul> 
     <% end %>
-  </ul>   
+  </div>
 <% end %>

@@ -146,6 +146,23 @@ aside{
   color: #492c8f;
   border-bottom: solid 1px #239fb4;
 }
+// 実行一覧
+.ji-itiran{
+  border-bottom: solid 1px #0daeee;
+  margin-top: 30px;
+}
+.ji-koutei{
+  font-family: serif;
+  justify-content: center;
+  display: flex;
+}
+.ji-koutei h5{
+  padding-top: 25px;
+}
+.ji-koutei h3{
+  color: #d58d9d;
+  margin-top: 20px;
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
