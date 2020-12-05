@@ -1,0 +1,8 @@
+<% @tasks.each do |task| %>
+    やりたい事: <%= task.name %>
+    <ul class="ml-4">
+        <% task.todos.each do |todo| %>
+          <li>工程: <todo.name %></li>
+        <% end %>
+    </ul>
+<% end %>

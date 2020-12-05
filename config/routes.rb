@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'chat_rooms/index'
   root 'dig_top#home'
  
   get 'dig_home/dighome'
-  get 'dig_home/chat_room'
   get 'dig_home/dig_index'
-  get 'dig_top/help'
   get 'dig_top/setumei'
+
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   
@@ -15,11 +13,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :tasks, only: %i(index)
+    resources :dones, only: %i(index)
   end
   
-  resources :endshow
-  resources :chat_rooms
-  resources :endshow 
+  resources :endshow, only: %i(index)
+  resources :chat_rooms, only: %i(index)
 
   resources :tasks do
     resources :chat_rooms, only: %i(index create)

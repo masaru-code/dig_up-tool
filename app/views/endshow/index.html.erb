@@ -16,7 +16,7 @@
             <%= gravatar_for user, size: 50 %>
             <h3><%= user.name %></h3>&emsp;&emsp;
             <h5><%= task.name %></h5>&emsp;&emsp;
-            <%= link_to "工程ページへ", endshow_path(user), class: "btn btn-primary" %>
+            <%= link_to "工程ページへ", user_dones_path(user), class: "btn btn-primary" %>
           </div>
         <% end %>
       </ul> 
