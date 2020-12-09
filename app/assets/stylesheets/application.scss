@@ -4,26 +4,21 @@
 @import "devise";
 @import "chat_rooms";
 @import "dig_top";
+@import "dighome";
 @import "scaffolds";
 @import "tasks";
+@import "users_itiran";
+@import "dones";
+@import "setumei";
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/all.css");
 
 .mainpage-header{
-  width: 1100px;
-  background-image: url(image/273020_s.jpg) ;
+  background-image: image-url("image/273020_s.jpg") ;
   height: 80px;
 }
 .container{
   padding: 0 4%;
   text-align: center;
-}
-/*説明*/
-.setumei-page{
-  float: left;
-  margin-left: 50px;
-        /* 背景をグラデーションにする */
-  background: linear-gradient(45deg, #10100E, #A72F37);
-  color:#cccccc;
 }
 // sinup Login
 .new-contents{
@@ -38,35 +33,7 @@ aside{
   margin-top: 50px;
   width: 55%;
 }
-// ユーザー一覧
-.users-itiran{
-  width: 1100px;
-  list-style: none;
-  font-family: serif;
-}
-.users-itiran p{
-  margin-left: 800px;
-}
-.users-itiran h1{
-  text-align: center;
-  margin: 30px 0px 20px 0px; 
-}
-.kaminari{
-  margin-top: 10px;
-  margin-left: 600px;
-}
-.users{
-  list-style: none;
-  text-align: left;
-  margin-left: 200px;
-}
-.gravatar{
-  margin: 10px 80px 10px 100px;
-  list-style: none;
-  font-size: 200%;
-  border-bottom: solid 1px #dbedf0;
-  color: #d58d9d; 
-}
+
 // みんなのやりたい事一覧
 .seach-itiran{
   margin-left: 450px;
@@ -123,35 +90,10 @@ aside{
 .task-index-area {
     font-family: serif;
 }
-// dighomeページ
-.dighome{
-  width: 1100px;
-  height:700px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-family: serif;
-}
-.dighome-left{
-  padding-left: 20px;
-  width: 60%;
-}
-.dighome-item{
-  margin-top: 30px;
-}
-.aside-home{
-  width: 38%;
-}
-.alltask{
-  color: #492c8f;
-  border-bottom: solid 1px #239fb4;
-}
+
 // 実行一覧
-.ji-itiran{
-  border-bottom: solid 1px #0daeee;
-  margin-top: 30px;
-}
 .ji-koutei{
+  margin-top: 30px;
   font-family: serif;
   justify-content: center;
   display: flex;
@@ -162,6 +104,9 @@ aside{
 .ji-koutei h3{
   color: #d58d9d;
   margin-top: 20px;
+}
+.ji-koutei a{
+  padding-top: 20px;
 }
 
 /*

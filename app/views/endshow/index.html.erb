@@ -6,7 +6,6 @@
     <%= f.submit "送信" %>
   <% end %>
 </div>
-
 <% @users.each do |user| %>
   <div class = "ji-itiran">
     <% if user.tasks.done.any? %>

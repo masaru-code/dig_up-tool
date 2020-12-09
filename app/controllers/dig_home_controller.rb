@@ -9,7 +9,6 @@ PER = 5
   end
 
   def dig_index
-    #@users = User.page(params[:page]) 
     @users = User.page(params[:page]).per(PER)
   end
   
@@ -18,7 +17,6 @@ PER = 5
   
   def chat_room
      @task = current_user.tasks(name)
-    # @user = current_user.users
   end
   
 private

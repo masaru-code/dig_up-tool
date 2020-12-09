@@ -1,3 +1,18 @@
-// Place all the styles related to the dones controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.done_content{
+  border: 5px ridge rgb(47, 235, 22);
+  border-radius: 10px;
+  width: 700px;
+  font-family: serif;
+  margin: 40px 200px 0px 300px;
+}
+
+.done_content li{
+  border-top: 2px solid rgb(160, 160, 165);
+  
+  list-style: none;
+  margin-top: 20px;
+}
+.done_list{
+  padding-left: 50px;
+  background-color: rgb(113, 243, 119);
+}

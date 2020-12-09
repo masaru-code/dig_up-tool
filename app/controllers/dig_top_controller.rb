@@ -8,5 +8,6 @@ class DigTopController < ApplicationController
   end
   
   def setumei
+    render layout: 'setumei'
   end  
 end
