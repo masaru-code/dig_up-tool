@@ -8,13 +8,4 @@
   <div class= "chat-name">
         <h4>提案者:<%= @task.user&.name %>&emsp;&emsp;<%= @task.name %></h4>
   </div>
-    
-  <div class= "chat-coment">
-      <%= form_with model: @comment, url: task_chat_rooms_path(@task), local: true do |form| %>
-        <%= form.label :name, 'コメント入力' %>
-        <%= form.text_field :content %>
-        <%= form.file_field :image %>
-        <%= form.submit "下に送信" %>
-      <% end %>  
-  </div>
 </div>
