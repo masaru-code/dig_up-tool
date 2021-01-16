@@ -35,8 +35,11 @@
   margin-top: 100px;
   margin-bottom: 60px;
   /* 一番下までスクロールした時の余白 */
-  padding-bottom: 0;
   font-family: serif;
+}
+.chat-footer{
+  position: absolute;
+  bottom: 0;
 }
 .grava-name-coment{
   width: 1000px;
