@@ -22,7 +22,7 @@ class ChatRoomsController < ApplicationController
     #   redirect_to tasks_path(@task)
     # end
   end
-  
+
   private
 
   def set_task

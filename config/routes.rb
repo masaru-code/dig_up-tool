@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
   
   resources :endshow, only: %i(index)
-  resources :chat_rooms, only: %i(index)
+  resources :chat_rooms, only: %i(index,destroy)
 
   resources :tasks do
     resources :chat_rooms, only: %i(index create)
