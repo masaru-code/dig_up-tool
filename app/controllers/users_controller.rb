@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:current_user_id])
+    @user = current_user
   end
 end
 
 private
+
+  params.require(:user).permit(:image)
