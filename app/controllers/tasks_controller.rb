@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :check_ten_todo, only: [:create]
   before_action :set_task, only: [:update]
-  before_action :set_user, only: %i(index)
+  before_action :set_user, only: %i(index,show,destroy)
   
   def index
     @user = params[:user_id].present? ? @user : current_user
@@ -14,6 +14,7 @@ class TasksController < ApplicationController
   end 
   
   def show
+    @task_show = @user.tasks.find(params[:task_id])
   end
   
   def edit
@@ -45,7 +46,12 @@ class TasksController < ApplicationController
 
   # DELETEs/1
   def destroy
-    @task.destroy
+    if @user == curent_user
+      @user.tasks.find(params[:task_id]).destroy
+    else
+      :notice '本人でないユーザーでは消せません。'
+    end
+    #@task.destroy
   end
 
   
