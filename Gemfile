@@ -43,3 +43,5 @@ gem 'image_processing', '~> 1.2'
 
 # Bootstrap4 and jQuery
 gem 'bootstrap', '~> 4.3.1'
+
+gem 'carrierwave'

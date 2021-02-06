@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :dones, only: %i(index)
   end
   
+  resources :work_schedules
   resources :endshow, only: %i(index)
   resources :chat_rooms, only: %i(index,destroy)
 
