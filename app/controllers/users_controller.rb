@@ -6,8 +6,8 @@ class UsersController < ApplicationController
   end
   
   def show
-    @users = current_user
+    @user = current_user
   end
 end
 
-private
+

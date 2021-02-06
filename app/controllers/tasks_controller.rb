@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :check_ten_todo, only: [:create]
   before_action :set_task, only: [:update]
-  before_action :set_user, only: %i(index)
+  before_action :set_user, only: %i(index show)
   
   def index
     @user = params[:user_id].present? ? @user : current_user
@@ -14,6 +14,8 @@ class TasksController < ApplicationController
   end 
   
   def show
+    @user = current_user
+    @tasks = current_user.tasks.find(params[:id])
   end
   
   def edit
@@ -45,10 +47,11 @@ class TasksController < ApplicationController
 
   # DELETEs/1
   def destroy
+    @task = current_user.tasks.find(params[:id])
     @task.destroy
+    redirect_to user_path(current_user), notice: '削除されました'
   end
 
-  
   private
 
   def task_params
