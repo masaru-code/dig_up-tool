@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :check_ten_todo, only: [:create]
   before_action :set_task, only: [:update]
-  before_action :set_user, only: %i(index show)
+  before_action :set_user, only: %i(index)
   
   def index
     @user = params[:user_id].present? ? @user : current_user
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   
   def show
     @user = current_user
-    @tasks = current_user.tasks.find(params[:id])
+    @tasks = Task.find(params[:id])
   end
   
   def edit
