@@ -1,6 +1,6 @@
 <div class="chat-wrapper">
   <div class="chat-nav">
-    <h3><%= link_to "提案者　工程作成ページへ", task_path(task), class: "btn btn-primary" %></h3>
+    <h3><%= link_to "提案者　工程作成ページへ", task_path(@task), class: "btn btn-primary" %></h3>
     <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
     <li><%= link_to "home", dig_home_dighome_path %></li>         
     <li><%= link_to "sing_up", new_user_registration_path %></li>
