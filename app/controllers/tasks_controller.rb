@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   
   def show
     @user = current_user
-    @tasks = current_user.tasks.find(params[:id])
+    @tasks = Task.find(params[:id])
   end
   
   def edit
