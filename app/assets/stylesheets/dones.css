@@ -1,0 +1,19 @@
+.done_content {
+  border: 5px ridge #2feb16;
+  border-radius: 10px;
+  width: 700px;
+  font-family: serif;
+  margin: 40px 200px 0px 300px;
+}
+
+.done_content li {
+  border-top: 2px solid #a0a0a5;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.done_list {
+  padding-left: 50px;
+  background-color: #71f377;
+}
+/*# sourceMappingURL=dones.css.map */

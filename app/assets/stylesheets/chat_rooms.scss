@@ -37,9 +37,11 @@
   /* 一番下までスクロールした時の余白 */
   font-family: serif;
 }
-.chat-footer{
-  position: absolute;
-  bottom: 0;
+.chat-footer {
+  position: fixed;
+  bottom: 10px;
+  left: 600px;
+  background: rgb(91, 231, 114);
 }
 .grava-name-coment{
   width: 1000px;

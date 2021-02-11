@@ -1,0 +1,26 @@
+.digtop {
+  margin-top: 120px;
+  font-family: serif;
+}
+
+.digtop p {
+  margin: 30px 0px 50px 0px;
+}
+
+.touroku-btn {
+  margin-top: 30px;
+}
+
+.big-bg {
+  height: 600px;
+  padding: 0 4%;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-image: image-url("image/970138_s.jpg");
+}
+
+#home .page-title {
+  text-transform: none;
+}
+/*# sourceMappingURL=dig_top.css.map */
