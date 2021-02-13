@@ -1,23 +1,12 @@
 <div class = "seach-itiran"
   <h1>実行した事一覧</h1>
-   #<div class="kaminari"> <%= paginate @tasks %> </div>
-  <%= form_with url: endshow_index_path,method: :get, local: true do |f| %>
-    <%= f.label :name, '検索したいユーザー名' %>
-    <%= f.text_field :name %>
-    <%= f.submit "送信" %>
-  <% end %>
-</div>
-<% @users.each do |user| %>
+  <div class="kaminari"> <%= paginate @tasks %> </div>
+
+<% @dones.each do |done| %>
   <div class = "ji-itiran">
-    <% if user.tasks.done.any? %>
-      <% user.tasks.done.each do |task| %>
-        <div class = "ji-koutei">
-          <%= gravatar_for user, size: 50 %>
-          <h3><%= user.name %></h3>&emsp;&emsp;
-          <h5><%= task.name %></h5>&emsp;&emsp;
-          <%= link_to "工程ページへ", user_dones_path(user), class: "btn btn-primary" %>
-        </div>
-      <% end %> 
-    <% end %>
+    <div class = "ji-koutei">
+      <h5><%= done.name %></h5>&emsp;&emsp;
+      <%= link_to "工程ページへ", task_todos_path(done), class: "btn btn-primary" %>
+    </div> 
   </div>
 <% end %>

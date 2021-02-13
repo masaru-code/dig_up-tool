@@ -3,7 +3,7 @@ class EndshowController < ApplicationController
     PER = 5
 
     def index      
-      @users = params[:name].present? ? User.where('name LIKE ?', "%#{params[:name]}%") : User.none
+      @dones = Task.all.done
       @tasks = Task.page(params[:page]).per(PER)
     end
 end

@@ -13,7 +13,6 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :tasks, only: %i(index)
-    resources :dones, only: %i(index)
   end
   
   resources :work_schedules

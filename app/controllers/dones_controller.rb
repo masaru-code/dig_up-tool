@@ -1,7 +1,7 @@
 class DonesController < ApplicationController
-    def index
+    def show
         @user = User.find(params[:user_id])
-        @tasks = @user.tasks.done.order(updated_at: :desc).limit(1)
+        @task = Task.done.find(params[:done_id)
     end
   
     def destroy

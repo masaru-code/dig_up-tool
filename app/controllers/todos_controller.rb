@@ -1,7 +1,13 @@
 class TodosController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task
+  before_action :set_task, except: [:index]
   before_action :set_todo, only: [:show, :edit, :update, :destroy, :sort]
+
+  #endshowの工程ボタンからここへ
+  def index 
+    @task = Task.find.(params[:task_id])
+    render 'dones/show'
+  end
 
   # GET /todos/new
   def new
