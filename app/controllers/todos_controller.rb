@@ -5,7 +5,7 @@ class TodosController < ApplicationController
 
   #endshowの工程ボタンからここへ
   def index 
-    @task = Task.find.(params[:task_id])
+    @task = Task.find(params[:task_id])
     render 'dones/show'
   end
 

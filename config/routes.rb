@@ -15,12 +15,12 @@ Rails.application.routes.draw do
     resources :tasks, only: %i(index)
   end
   
-  resources :work_schedules
   resources :endshow, only: %i(index)
   resources :chat_rooms, only: %i(index,destroy)
 
   resources :tasks do
     resources :chat_rooms, only: %i(index create)
+    resources :work_schedules
     resources :todos do
       member do
         get "sort"

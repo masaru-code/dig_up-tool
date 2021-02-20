@@ -3,7 +3,7 @@ class EndshowController < ApplicationController
     PER = 5
 
     def index      
-      @dones = Task.all.done
+      @dones = Task.done
       @tasks = Task.page(params[:page]).per(PER)
     end
 end

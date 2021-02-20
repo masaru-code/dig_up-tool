@@ -1,0 +1,9 @@
+<%= @task.name  %> <%= @user %>
+
+<div class= "work_schedule_fild">
+  <%= form_with model: @work_schedules, url: task_work_schedules_path(@task), local: true do |form| %>
+    <%= form.label :name, '工程入力' %>
+    <%= form.text_field :name %>
+    <%= form.submit "送信" %>
+  <% end %>
+</div>
