@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   has_many :tasks
   has_many :comments
-  has_many :work_schedules
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,:trackable,

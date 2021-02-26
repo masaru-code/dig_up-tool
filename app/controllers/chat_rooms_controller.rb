@@ -18,9 +18,6 @@ class ChatRoomsController < ApplicationController
       render :index
     end
     
-    # if @task.save
-    #   redirect_to tasks_path(@task)
-    # end
   end
 
   private
