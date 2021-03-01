@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_204500) do
     t.bigint "task_id"
     t.string "name", null: false
     t.integer "position", default: 1
+    t.boolean "checkbox", default: false
     t.text "advise"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

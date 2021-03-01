@@ -4,6 +4,7 @@ class CreateWorkSchedules < ActiveRecord::Migration[5.2]
       t.references :task
       t.string :name, null: false
       t.integer :position, default: 1
+      t.boolean :checkbox, default: 0
       t.text :advise
       t.timestamps
       t.timestamps

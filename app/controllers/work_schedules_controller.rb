@@ -1,6 +1,6 @@
 class WorkSchedulesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: %i(index create destroy edit)
+  before_action :set_task, only: %i(index create destroy edit update)
 
 
   def index
@@ -19,6 +19,13 @@ class WorkSchedulesController < ApplicationController
   end
 
   def edit
+    @work_schedule = @task.work_schedules.find(params[:id])
+  end
+
+  def update
+    @work_schedule = @task.work_schedules.find(params[:id])
+    @work_schedule.update(schedule_params)
+    redirect_to task_work_schedules_path(@task), notice: "編集されました"
   end
 
   def destroy
