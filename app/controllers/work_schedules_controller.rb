@@ -6,6 +6,7 @@ class WorkSchedulesController < ApplicationController
   def index
     @work_schedules = @task.work_schedules
     @user = User.find(@task.user_id)
+    @workid = 0
   end
 
 
@@ -24,8 +25,12 @@ class WorkSchedulesController < ApplicationController
 
   def update
     @work_schedule = @task.work_schedules.find(params[:id])
-    @work_schedule.update(schedule_params)
-    redirect_to task_work_schedules_path(@task), notice: "編集されました"
+
+    if @work_schedule.update(schedule_params)
+      redirect_to task_work_schedules_path(@task), notice: "編集されました"
+    else
+      render :edit
+    end
   end
 
   def destroy

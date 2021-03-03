@@ -18,10 +18,19 @@
 
   <tbody>
     <% @work_schedules.each do |schedule| %>
+    <% @workid = 1 %>
       <tr>
+        <td><%= @workid %></td>
         <td><%= schedule.name %></td>
         <td><%= link_to '編集', edit_task_work_schedule_path(@task,schedule), class: "btn btn-success" %></td>
         <td><%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, data: { confirm: '工程削除しますか?' }, class: "btn btn-danger" %></td>
+        <td>
+          <%= form_with(model: @work_schedules, local: true) do |form| %>
+            <div class="field">
+              <%= form.check_box :checkbox%>
+            </div>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
