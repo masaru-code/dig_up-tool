@@ -6,7 +6,6 @@ class WorkSchedulesController < ApplicationController
   def index
     @work_schedules = @task.work_schedules
     @user = User.find(@task.user_id)
-    @workid = 0
   end
 
 
