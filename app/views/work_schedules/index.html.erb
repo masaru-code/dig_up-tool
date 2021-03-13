@@ -39,7 +39,7 @@
         <td><%= link_to "番号変更", "#", class: "btn btn-primary" %></td>
         <td></td>
         <td></td>
-        <td><%= link_to "工程完了", "#", class: "btn btn-primary" %></td>
+        <td><%= link_to "やりたい事完了", task_done_path(@task), method: :patch, class: "btn btn-primary" %></td>
         <td></td>
       </tr>
     </table>
@@ -86,7 +86,7 @@
       <td><%= link_to "番号変更", "#", class: "btn btn-primary" %></td>
       <td></td>
       <td></td>
-      <td><%= link_to "工程完了", "#", class: "btn btn-primary" %></td>
+      <td><%= link_to "やりたい事完了", "#", class: "btn btn-primary" %></td>
       <td></td>
     </tr>
   </table>

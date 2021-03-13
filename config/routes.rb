@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :tasks do
     resources :chat_rooms, only: %i(index create)
     resources :work_schedules #resource 単数でｉｄを作らない
+    resource :done, only: %i(index update)
     resources :todos do
       member do
         get "sort"

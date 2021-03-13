@@ -1,6 +1,6 @@
 class WorkSchedulesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_task, only: %i(index create destroy edit update)
+  before_action :set_task, only: %i(index create destroy edit update show)
 
 
   def index
@@ -21,6 +21,7 @@ class WorkSchedulesController < ApplicationController
   def edit
     @work_schedule = @task.work_schedules.find(params[:id])
   end
+
 
   def update
     @work_schedule = @task.work_schedules.find(params[:id])
