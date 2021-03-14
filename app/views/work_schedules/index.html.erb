@@ -14,19 +14,19 @@
       </th>
     </table>
 
-    <table>
+    <table class="table-striped table-hover">
       <tr>
-        <th>並び替え</th>
-        <th>番号</th>
-        <th>工程内容</th>
-        <th>終了</th>
-        <th colspan="1"></th>
+        <th width="8%">並び替え</th>
+        <th width="10%">番号</th>
+        <th width="60%">工程内容</th>
+        <th width="5%">終了</th>
+        <th width="17%" colspan="1"></th>
       </tr>
       <% @work_schedules.each_with_index do |schedule, position| %>
         <tr>
           <td></td>
           <td><%= position + 1 %></td>
-          <td><%= schedule.name %></td>
+          <td><%= truncate(schedule.name, length: 48)  %></td>
           <td><input type="checkbox" ></td>
           <td><%= link_to '編集', edit_task_work_schedule_path(@task,schedule), class: "btn btn-success" %>
           &emsp;&emsp;<%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, class: "btn btn-danger", data: { confirm: '工程削除しますか?' } %></td>
@@ -64,31 +64,17 @@
 
   <table>
     <tr>
-      <th>並び替え</th>
       <th>番号</th>
       <th>工程内容</th>
-      <th>終了</th>
       <th colspan="1"></th>
     </tr>
     <% @work_schedules.each_with_index do |schedule, position| %>
       <tr>
-        <td></td>
         <td><%= position + 1 %></td>
         <td><%= schedule.name %></td>
-        <td><input type="checkbox" ></td>
-        <td><%= link_to '削除', task_work_schedule_path(@task,schedule), method: :delete, class: "btn btn-danger", data: { confirm: '工程削除しますか?' } %></td>
       </tr>
     <% end %>
   </table>
 
-  <table>
-    <tr>
-      <td><%= link_to "番号変更", "#", class: "btn btn-primary" %></td>
-      <td></td>
-      <td></td>
-      <td><%= link_to "やりたい事完了", "#", class: "btn btn-primary" %></td>
-      <td></td>
-    </tr>
-  </table>
   </div>
 <% end %>

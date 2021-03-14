@@ -4,6 +4,6 @@ class EndshowController < ApplicationController
 
     def index      
       @dones = Task.done
-      @tasks = Task.page(params[:page]).per(PER)
+      @tasks = @dones.page(params[:page]).per(PER)
     end
 end

@@ -1,14 +1,18 @@
 class DonesController < ApplicationController
-    def show
-        @user = User.find(params[:user_id])
-    end
+before_action :set_task, only: %i(update)
 
-    def update
-      @task.done!
-      redirect_to endshow_index_path
-    end
-  
-    def destroy
-      task.destroy
-    end
+  def show
+      @user = User.find(params[:user_id])
+  end
+
+  def update
+    @task.done!
+    redirect_to endshow_index_path
+  end
+
+  private
+
+  def set_task
+    @task = Task.find(params[:task_id])
+  end
 end
